@@ -21,5 +21,8 @@ callFunction(sayHi);
 
 
 // module from 2module.js
-var counter = require('./2module');
-console.log(counter(['ww','wwx','xxx']));
+var stuff = require('./2module');
+console.log(stuff.counter(['ww','wwx','xxx']));
+console.log(stuff.adder(1,3));
+console.log(stuff.pi);
+console.log(stuff.suber(33,3));
