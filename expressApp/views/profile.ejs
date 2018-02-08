@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style media="screen">
-      body{background: skyblue;font-family: verdana;color: #fff;padding: 30px;}
-      h1{font-size: 48px;text-transform: uppercase;letter-spacing: 2px;text-align: center;}
-      p,li{ font-size: 16px;text-align: center;}
-      h2{font-size: 30px;text-transform: uppercase;letter-spacing: 2px;text-align: center;}
-    </style>
+    <!-- if you look at the link tag inside your html,
+     it says "href="/assets/style.css"", here in this
+     case you are trying to access the /assets folder,
+     so then you are served with the files inside the
+     stuff dir(which is indicated on the second param
+     of the use function).﻿ -->
+    <link rel="stylesheet" href="/assets/master.css">
   </head>
   <body>
     <% include partials/nav.ejs %>
@@ -23,5 +24,19 @@
         <li><%= item %></li>
       <% }); %>
     </ul>
+
+    <p> <%= qs.department %></p>
+    <p> <%= qs.who %></p>
+
+    // make post by adding  method="POST" action="/profile"
+    <form id="contact-form" method="POST" action="/profile">
+      <label for="who">who do you want to contact?</label>
+      <input type="text" name="who" value="<%= qs.who %>">
+      <label for="department">which department?</label>
+      <input type="text" name="department" value="<%= qs.department %>">
+      <label for="email">what is your email address</label>
+      <input type="email" name="email"/>
+      <input type="submit" value="submit"/>
+    </form>
   </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CONTACT</title>
+
+    <link rel="stylesheet" href="/assets/master.css">
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    
+    // make post by adding  method="POST" action="/profile"
+    <form id="contact-form" method="POST" action="/contact">
+      <label for="who">who do you want to contact?</label>
+      <input type="text" name="who" value="<%= qs.who %>">
+      <label for="department">which department?</label>
+      <input type="text" name="department" value="<%= qs.department %>">
+      <label for="email">what is your email address</label>
+      <input type="email" name="email"/>
+      <input type="submit" value="submit"/>
+    </form>
+  </body>
+</html>
